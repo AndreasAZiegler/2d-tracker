@@ -13,7 +13,9 @@ endif()
 
 find_package(Eigen3 REQUIRED)
 
-add_library(2d-tracker SHARED src/2d-tracker.cpp)
+include_directories(include)
+
+add_library(2d-tracker SHARED src/2d-tracker.cpp include/2d-tracker.h)
 target_link_libraries (2d-tracker Eigen3::Eigen)
 
 # Install library
